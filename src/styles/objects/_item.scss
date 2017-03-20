@@ -1,0 +1,499 @@
+
+//===============================================================
+// Item
+//===============================================================
+
+
+/*
+Item
+
+An individual documentation item
+
+.item--fixed-child-width       - Doesn't allow the children to scale in width
+.item--fixed-child-height       - Doesn't allow the children to scale in height
+*/
+
+@mixin child-colors($color) {
+  @for $idx from 1 through 10 {
+    &:nth-child(#{$idx}) {
+      background-color: rgba($color, 1 - $idx * 0.07);
+    }
+  }
+}
+
+
+.item {
+  display: inline-block;
+  width: 33rem;
+  position: relative;
+  cursor: pointer;
+  border-radius: 0.4rem;
+  padding: 0.8rem;
+  left: -0.8rem;
+
+  &:hover {
+    background-color: rgba(color(white), 0.06);
+  }
+
+  &:active {
+    background-color: rgba(color(white), 0.1);
+  }
+}
+
+  .item__heading {
+    @include type-style(base-code);
+    height: 2rem;
+    display: inline-block;
+    width: 28rem;
+    position: absolute;
+    left: 6.8rem;
+    top: 1.6rem;
+  }
+
+  .item__container {
+    width: 4.6rem;
+    height: 4.6rem;
+    padding: 0.4rem;
+    border: 1px solid rgba(color(white), 0.2);
+  }
+
+    .item__child {
+      @include child-colors(color(child));
+      min-width: 0.6rem;
+      min-height: 0.4rem;
+      display: block;
+      border: 1px solid color(black);
+    }
+
+
+//---------------------------------------------------------------
+// Modifier: Common grid template
+//---------------------------------------------------------------
+
+.item--container-common-grid-template {
+
+  .item__container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto;
+  }
+}
+
+.item--container-common-fixed-grid-template {
+
+  .item__container {
+    display: grid;
+    grid-template-columns: 7px 7px 7px;
+    grid-template-rows: 7px 7px 7px;
+  }
+
+  .item__child {
+    min-width: 0.7rem;
+    min-height: 0.7rem;
+  }
+}
+
+
+//---------------------------------------------------------------
+// Modifier: alt child colors 1
+//---------------------------------------------------------------
+
+.item--alt-child-colors-1 {
+
+  .item__child {
+    @include child-colors(color(child-alt));
+  }
+}
+
+
+//---------------------------------------------------------------
+// Modifier: Empty Children
+//---------------------------------------------------------------
+
+.item--empty-children {
+
+  .item__child {
+    background-color: rgba(255, 255, 255, 0.15);
+  }
+}
+
+
+//---------------------------------------------------------------
+// Modifier: Animate Children
+//---------------------------------------------------------------
+
+.item--animate-children {
+
+  .item__child {
+    animation-name: child-fade-in;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+
+    @for $i from 1 through 12 {
+      &:nth-child(#{$i}) {
+        animation-delay: 0.4s * $i;
+      }
+    }
+  }
+}
+
+@keyframes child-fade-in {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+
+//---------------------------------------------------------------
+// Modifier: display
+//---------------------------------------------------------------
+
+// grid
+.item--container-display-grid {
+
+  .item__container {
+    display: grid;
+  }
+}
+
+// inline-grid
+.item--container-display-inline-grid {
+
+  .item__container {
+    display: inline-grid;
+  }
+}
+
+
+//---------------------------------------------------------------
+// Modifier: grid-template
+//---------------------------------------------------------------
+
+// 1
+.item--container-grid-template-1 {
+
+  .item__container {
+    display: grid;
+    grid-template-columns: 12px 12px 12px;
+    grid-template-rows: 12px 12px 12px;
+  }
+}
+
+// 2
+.item--container-grid-template-2 {
+
+  .item__container {
+    display: grid;
+    grid-template-columns: repeat(3, 12px);
+    grid-template-rows: repeat(3, auto);
+  }
+}
+
+// 3
+.item--container-grid-template-3 {
+
+  .item__container {
+    display: grid;
+    grid-template-columns: 8px auto 8px;
+    grid-template-rows: 8px auto 12px;
+  }
+}
+
+// 4
+.item--container-grid-template-4 {
+
+  .item__container {
+    display: grid;
+    grid-template-columns: 22% 22% auto;
+    grid-template-rows: 22% auto 22%;
+  }
+}
+
+
+//---------------------------------------------------------------
+// Modifier: grid-gap
+//---------------------------------------------------------------
+
+// 1
+.item--container-grid-gap-1 {
+
+  .item__container {
+    grid-row-gap: 1px;
+    grid-column-gap: 9px;
+  }
+}
+
+// 1
+.item--container-grid-gap-2 {
+
+  .item__container {
+    grid-gap: 1px 9px;
+  }
+}
+
+// 1
+.item--container-grid-gap-3 {
+
+  .item__container {
+    grid-gap: 6px;
+  }
+}
+
+
+//---------------------------------------------------------------
+// Modifier: justify-items
+//---------------------------------------------------------------
+
+// start
+.item--container-justify-items-start {
+
+  .item__container {
+    justify-items: start;
+  }
+
+  .item__child {
+    min-width: 0.5rem;
+  }
+}
+
+// end
+.item--container-justify-items-end {
+
+  .item__container {
+    justify-items: end;
+  }
+
+  .item__child {
+    min-width: 0.5rem;
+  }
+}
+
+// center
+.item--container-justify-items-center {
+
+  .item__container {
+    justify-items: center;
+  }
+
+  .item__child {
+    min-width: 0.5rem;
+  }
+}
+
+// stretch
+.item--container-justify-items-stretch {
+
+  .item__container {
+    justify-items: stretch;
+  }
+
+  .item__child {
+    min-width: 0.5rem;
+  }
+}
+
+
+//---------------------------------------------------------------
+// Modifier: align-items
+//---------------------------------------------------------------
+
+// start
+.item--container-align-items-start {
+
+  .item__container {
+    align-items: start;
+  }
+
+  .item__child {
+    min-height: 0.5rem;
+  }
+}
+
+// end
+.item--container-align-items-end {
+
+  .item__container {
+    align-items: end;
+  }
+
+  .item__child {
+    min-height: 0.5rem;
+  }
+}
+
+// center
+.item--container-align-items-center {
+
+  .item__container {
+    align-items: center;
+  }
+
+  .item__child {
+    min-height: 0.5rem;
+  }
+}
+
+// stretch
+.item--container-align-items-stretch {
+
+  .item__container {
+    align-items: stretch;
+  }
+
+  .item__child {
+    min-height: 0.5rem;
+  }
+}
+
+
+//---------------------------------------------------------------
+// Modifier: Justify Content
+//---------------------------------------------------------------
+
+.item--container-justify-content-start {
+
+  .item__container {
+    justify-content: start;
+  }
+}
+
+.item--container-justify-content-end {
+
+  .item__container {
+    justify-content: end;
+  }
+}
+
+.item--container-justify-content-center {
+
+  .item__container {
+    justify-content: center;
+  }
+}
+
+.item--container-justify-content-stretch {
+
+  .item__container {
+    justify-content: stretch;
+  }
+}
+
+.item--container-justify-content-space-around {
+
+  .item__container {
+    justify-content: space-around;
+  }
+}
+
+.item--container-justify-content-space-between {
+
+  .item__container {
+    justify-content: space-between;
+  }
+}
+
+.item--container-justify-content-space-evenly {
+
+  .item__container {
+    justify-content: space-evenly;
+  }
+}
+
+
+//---------------------------------------------------------------
+// Modifier: Align Content
+//---------------------------------------------------------------
+
+.item--container-align-content-start {
+
+  .item__container {
+    align-content: start;
+  }
+}
+
+.item--container-align-content-end {
+
+  .item__container {
+    align-content: end;
+  }
+}
+
+.item--container-align-content-center {
+
+  .item__container {
+    align-content: center;
+  }
+}
+
+.item--container-align-content-stretch {
+
+  .item__container {
+    align-content: stretch;
+  }
+}
+
+.item--container-align-content-space-around {
+
+  .item__container {
+    align-content: space-around;
+  }
+}
+
+.item--container-align-content-space-between {
+
+  .item__container {
+    align-content: space-between;
+  }
+}
+
+.item--container-align-content-space-evenly {
+
+  .item__container {
+    align-content: space-evenly;
+  }
+}
+
+
+
+//---------------------------------------------------------------
+// Modifier: Grid Auto Flow
+//---------------------------------------------------------------
+
+// row
+.item--container-grid-auto-flow-row {
+
+  .item__container {
+    grid-auto-flow: row;
+  }
+}
+
+// column
+.item--container-grid-auto-flow-column {
+
+  .item__container {
+    grid-auto-flow: column;
+  }
+}
+
+// dense
+.item--container-grid-auto-flow-dense {
+
+  .item__container {
+    grid-auto-flow: dense;
+  }
+}

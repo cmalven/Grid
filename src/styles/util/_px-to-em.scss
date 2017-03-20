@@ -1,0 +1,22 @@
+//===============================================================
+// PX-to-EM
+//===============================================================
+/*
+  Convert pixels to ems
+  eg. for a relational value of 12px write em(12) when the paren
+  if the parent is another value say 24px write em(12, 24)
+*/
+
+
+// Set base
+$em-base: 12px !default;
+
+@function em($pxval, $base: $em-base) {
+  @if not unitless($pxval) {
+      $pxval: strip-units($pxval);
+  }
+  @if not unitless($base) {
+      $base: strip-units($base);
+  }
+  @return ($pxval / $base) * 1em;
+}

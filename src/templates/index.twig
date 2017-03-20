@@ -1,0 +1,282 @@
+{% extends "layout.twig" %}
+
+{% block main %}
+  <header class="l-header">
+    <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 33">
+      <style>
+        .st0{fill:#FF005A;} .st1{opacity:0.4; fill:#FFFFFF;}
+      </style>
+      <path class="st0" d="M0 24h2v2H0zM0 31h2v2H0zM0 16h2v2H0z"/>
+      <path class="st1" d="M8 16h2v2H8z"/>
+      <path class="st0" d="M0 8h2v2H0zM0 0h2v2H0zM37 24h2v2h-2zM37 31h2v2h-2z"/>
+      <path class="st1" d="M45 31h2v2h-2zM53 31h2v2h-2z"/>
+      <path class="st0" d="M37 16h2v2h-2zM37 8h2v2h-2zM37 0h2v2h-2zM74 24h2v2h-2zM74 31h2v2h-2z"/>
+      <path class="st1" d="M81 31h2v2h-2zM89 31h2v2h-2z"/>
+      <path class="st0" d="M111 31h2v2h-2zM111 0h2v2h-2zM119 24h2v2h-2zM119 8h2v2h-2z"/>
+      <path class="st0" d="M111 0h2v2h-2zM111 31h2v2h-2zM119 8h2v2h-2zM119 24h2v2h-2z"/>
+      <path class="st1" d="M144 2h-2V0h2zM144 33h-2v-2h2zM137 10h-2V8h2zM136 26h-2v-2h2z"/>
+      <path class="st0" d="M127 16h2v2h-2z"/>
+      <path class="st1" d="M81 0h2v2h-2zM89 0h2v2h-2z"/>
+      <path class="st0" d="M74 16h2v2h-2z"/>
+      <path class="st1" d="M81 16h2v2h-2z"/>
+      <path class="st0" d="M74 8h2v2h-2zM74 0h2v2h-2z"/>
+      <path class="st1" d="M8 0h2v2H8zM16 0h2v2h-2z"/>
+    </svg>
+  </header>
+
+  <div class="subhead">container</div>
+  
+  {# container: display #}
+  <section class="set">
+    <h2 class="set__heading">display</h2>
+    <p class="set__notes">Establishes a new grid formatting context for children.</p>
+    <div class="set__items">
+      {% include '_partials/item.twig' with {
+        classes: 'item--container-display-grid',
+        heading: 'display: grid;',
+        code: 'auto'
+      } %}
+      {% include '_partials/item.twig' with {
+        classes: 'item--container-display-inline-grid',
+        heading: 'display: inline-grid;',
+        code: 'auto'
+      } %}
+      {% include '_partials/item.twig' with {
+        classes: 'item--container-display-subgrid',
+        heading: 'display: subgrid;',
+        code: 'auto'
+      } %}
+    </div>
+  </section>
+  
+  {# container: grid-template #}
+  <section class="set">
+    <h2 class="set__heading">grid-template</h2>
+    <p class="set__notes">Defines the rows and columns of the grid.</p>
+    <div class="set__items">
+      {% include '_partials/item.twig' with {
+        classes: 'item--container-grid-template-1',
+        heading: 'grid-template-columns: 12px 12px 12px;<br/>grid-template-rows: 12px 12px 12px;',
+        code: 'auto'
+      } %}
+      {% include '_partials/item.twig' with {
+        classes: 'item--container-grid-template-2',
+        heading: 'grid-template-columns: repeat(3, 12px);<br/>grid-template-rows: repeat(3, auto);',
+        code: 'auto'
+      } %}
+      {% include '_partials/item.twig' with {
+        classes: 'item--container-grid-template-3',
+        heading: 'grid-template-columns: 8px auto 8px;<br/>grid-template-rows: 8px auto 12px;',
+        code: 'auto'
+      } %}
+      {% include '_partials/item.twig' with {
+        classes: 'item--container-grid-template-4',
+        heading: 'grid-template-columns: 22% 22% auto;<br/>grid-template-rows: 22% auto 22%;',
+        code: 'auto'
+      } %}
+    </div>
+  </section>
+  
+  {# container: gap #}
+  <section class="set">
+    <h2 class="set__heading">grid-gap</h2>
+    <p class="set__notes">Specifies the size of column and row gutters.</p>
+    <div class="set__items">
+      {% include '_partials/item.twig' with {
+        classes: 'item--container-common-grid-template item--container-grid-gap-1',
+        heading: 'grid-row-gap: 1px;<br/>grid-column-gap: 9px;',
+        code: 'auto'
+      } %}
+      {% include '_partials/item.twig' with {
+        classes: 'item--container-common-grid-template item--container-grid-gap-2',
+        heading: 'grid-gap: 1px 9px;',
+        code: 'auto'
+      } %}
+      {% include '_partials/item.twig' with {
+        classes: 'item--container-common-grid-template item--container-grid-gap-3',
+        heading: 'grid-gap: 6px;',
+        code: 'auto'
+      } %}
+    </div>
+  </section>
+  
+  {# container: justify-items #}
+  <section class="set">
+    <h2 class="set__heading">justify-items</h2>
+    <p class="set__notes">Aligns content in a grid item along the row axis.</p>
+    <div class="set__items">
+      {% include '_partials/item.twig' with {
+        classes: 'item--container-common-grid-template item--container-justify-items-start',
+        heading: 'justify-items: start;',
+        code: 'auto'
+      } %}
+      {% include '_partials/item.twig' with {
+        classes: 'item--container-common-grid-template item--container-justify-items-end',
+        heading: 'justify-items: end;',
+        code: 'auto'
+      } %}
+      {% include '_partials/item.twig' with {
+        classes: 'item--container-common-grid-template item--container-justify-items-center',
+        heading: 'justify-items: center;',
+        code: 'auto'
+      } %}
+      {% include '_partials/item.twig' with {
+        classes: 'item--container-common-grid-template item--container-justify-items-stretch',
+        heading: 'justify-items: stretch; (default)',
+        code: 'justify-items: stretch;'
+      } %}
+    </div>
+  </section>
+  
+  {# container: align-items #}
+  <section class="set">
+    <h2 class="set__heading">align-items</h2>
+    <p class="set__notes">Aligns content in a grid item along the column axis.</p>
+    <div class="set__items">
+      {% include '_partials/item.twig' with {
+        classes: 'item--container-common-grid-template item--container-align-items-start',
+        heading: 'align-items: start;',
+        code: 'auto'
+      } %}
+      {% include '_partials/item.twig' with {
+        classes: 'item--container-common-grid-template item--container-align-items-end',
+        heading: 'align-items: end;',
+        code: 'auto'
+      } %}
+      {% include '_partials/item.twig' with {
+        classes: 'item--container-common-grid-template item--container-align-items-center',
+        heading: 'align-items: center;',
+        code: 'auto'
+      } %}
+      {% include '_partials/item.twig' with {
+        classes: 'item--container-common-grid-template item--container-align-items-stretch',
+        heading: 'align-items: stretch; (default)',
+        code: 'align-items: stretch;'
+      } %}
+    </div>
+  </section>
+  
+  {# container: justify-content #}
+  <section class="set">
+    <h2 class="set__heading">justify-content</h2>
+    <p class="set__notes">Justifies all grid content on row axis when total grid size is smaller than container.</p>
+    <div class="set__items">
+      {% include '_partials/item.twig' with {
+        classes: 'item--container-common-fixed-grid-template item--container-justify-content-start',
+        heading: 'justify-content: start;',
+        code: 'auto'
+      } %}
+      {% include '_partials/item.twig' with {
+        classes: 'item--container-common-fixed-grid-template item--container-justify-content-end',
+        heading: 'justify-content: end;',
+        code: 'auto'
+      } %}
+      {% include '_partials/item.twig' with {
+        classes: 'item--container-common-fixed-grid-template item--container-justify-content-center',
+        heading: 'justify-content: center;',
+        code: 'auto'
+      } %}
+      {% include '_partials/item.twig' with {
+        classes: 'item--container-common-fixed-grid-template item--container-justify-content-stretch',
+        heading: 'justify-content: stretch;',
+        code: 'auto'
+      } %}
+      {% include '_partials/item.twig' with {
+        classes: 'item--container-common-fixed-grid-template item--container-justify-content-space-around',
+        heading: 'justify-content: space-around;',
+        code: 'auto'
+      } %}
+      {% include '_partials/item.twig' with {
+        classes: 'item--container-common-fixed-grid-template item--container-justify-content-space-between',
+        heading: 'justify-content: space-between;',
+        code: 'auto'
+      } %}
+      {% include '_partials/item.twig' with {
+        classes: 'item--container-common-fixed-grid-template item--container-justify-content-space-evenly',
+        heading: 'justify-content: space-evenly;',
+        code: 'auto'
+      } %}
+    </div>
+  </section>
+  
+  {# container: align-content #}
+  <section class="set">
+    <h2 class="set__heading">align-content</h2>
+    <p class="set__notes">Justifies all grid content on column axis when total grid size is smaller than container.</p>
+    <div class="set__items">
+      {% include '_partials/item.twig' with {
+        classes: 'item--container-common-fixed-grid-template item--container-align-content-start',
+        heading: 'align-content: start;',
+        code: 'auto'
+      } %}
+      {% include '_partials/item.twig' with {
+        classes: 'item--container-common-fixed-grid-template item--container-align-content-end',
+        heading: 'align-content: end;',
+        code: 'auto'
+      } %}
+      {% include '_partials/item.twig' with {
+        classes: 'item--container-common-fixed-grid-template item--container-align-content-center',
+        heading: 'align-content: center;',
+        code: 'auto'
+      } %}
+      {% include '_partials/item.twig' with {
+        classes: 'item--container-common-fixed-grid-template item--container-align-content-stretch',
+        heading: 'align-content: stretch;',
+        code: 'auto'
+      } %}
+      {% include '_partials/item.twig' with {
+        classes: 'item--container-common-fixed-grid-template item--container-align-content-space-around',
+        heading: 'align-content: space-around;',
+        code: 'auto'
+      } %}
+      {% include '_partials/item.twig' with {
+        classes: 'item--container-common-fixed-grid-template item--container-align-content-space-between',
+        heading: 'align-content: space-between;',
+        code: 'auto'
+      } %}
+      {% include '_partials/item.twig' with {
+        classes: 'item--container-common-fixed-grid-template item--container-align-content-space-evenly',
+        heading: 'align-content: space-evenly;',
+        code: 'auto'
+      } %}
+    </div>
+  </section>
+  
+  {# container: grid-auto-flow #}
+  <section class="set">
+    <h2 class="set__heading">grid-auto-flow</h2>
+    <p class="set__notes">Algorithm for automatically placing grid items that aren't explictly placed.</p>
+    <div class="set__items">
+      {% include '_partials/item.twig' with {
+        classes: 'item--container-common-grid-template item--animate-children item--container-grid-auto-flow-row',
+        heading: 'grid-auto-flow: row;',
+        code: 'auto'
+      } %}
+      {% include '_partials/item.twig' with {
+        classes: 'item--container-common-grid-template item--animate-children item--container-grid-auto-flow-column',
+        heading: 'grid-auto-flow: column;',
+        code: 'auto'
+      } %}
+      {% include '_partials/item.twig' with {
+        classes: 'item--container-common-grid-template item--animate-children item--container-grid-auto-flow-dense',
+        heading: 'grid-auto-flow: dense;',
+        code: 'auto'
+      } %}
+    </div>
+  </section>
+  
+  <div class="subhead">children</div>
+  
+  {# child: order #}
+  <section class="set">
+    <h2 class="set__heading">order</h2>
+    <p class="set__notes">Allows you to explictly set the order you want each child to appear in.</p>
+    <div class="set__items">
+      {% include '_partials/item.twig' with {
+        classes: 'item--alt-child-colors-1 item--container-order',
+        heading: 'order: integer',
+        code: 'order: 1;'
+      } %}
+    </div>
+  </section>
+{% endblock %}

@@ -1,0 +1,25 @@
+{# 
+
+  {% include '_partials/item.twig' with {
+    classes: 'item--container-display-inline-flex',
+    heading: 'display: inline-flex',
+    numChildren: 6
+  } %}
+
+  ---------------------------------------------------------
+  A basic documentation item
+  ---------------------------------------------------------
+#}
+
+{% set numChildren = numChildren is defined ? numChildren : 9 %}
+{% set code = code == 'auto' ? heading | replace({'<br/>': '\n'}) : code %}
+
+<div class="item {{ classes }} js-item" data-code="{{ code }}">
+  <div class="item__container">
+    {% for idx in 1..numChildren %}
+      <span class="item__child"></span>
+    {% endfor %}
+  </div>
+  
+  <h3 class="item__heading js-item-heading">{{ heading }}</h3>
+</div>

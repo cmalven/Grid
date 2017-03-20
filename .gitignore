@@ -1,0 +1,5 @@
+dist
+.DS_Store
+*.html
+craft
+node_modules

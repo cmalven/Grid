@@ -1,0 +1,154 @@
+//===============================================================
+// Site Wide Variables
+//===============================================================
+
+/*
+  Colors are at the top so they're available to other variables
+  below. All other categories are listed in alphabetical order.
+*/
+
+
+//---------------------------------------------------------------
+// Colors
+//---------------------------------------------------------------
+$colors: (
+  black: #111,
+  white: #fff,
+  light-gray: #eee,
+  child: #21ffd6,
+  child-alt: #932aff
+);
+
+
+//---------------------------------------------------------------
+// Easing
+//---------------------------------------------------------------
+$easeLinear: cubic-bezier(0.250, 0.250, 0.750, 0.750);
+$easeOutCubic: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+$easeOutQuart: cubic-bezier(0.165, 0.840, 0.440, 1.000);
+$easeOutExpo: cubic-bezier(0.190, 1.000, 0.220, 1.000);
+$easeInOutExpo: cubic-bezier(1.000, 0.000, 0.000, 1.000);
+
+
+//---------------------------------------------------------------
+// Media Queries
+//---------------------------------------------------------------
+$mq-responsive: true;
+$mq-static-breakpoint: large;
+$mq-breakpoints: (
+  small: 500px,
+  medium: 768px,
+  large: 1024px,
+  xlarge: 1280px
+);
+
+
+//---------------------------------------------------------------
+// Susy Config
+//---------------------------------------------------------------
+$susy: (
+  output: float,
+  container: auto,
+  columns: 12,
+  gutters: 0.28,
+  global-box-sizing: border-box,
+  debug: (
+    image: hide,
+    color: rgba(#66f, .25),
+    output: background,
+    toggle: top right,
+  ),
+  use-custom: (
+    background-image: true,
+    background-options: false,
+    box-sizing: true,
+    clearfix: false,
+    rem: false,
+  )
+);
+
+
+//---------------------------------------------------------------
+// Spacing
+//---------------------------------------------------------------
+$spacing: (
+  none: rem(0),
+  xs: rem(15),
+  s: rem(30),
+  sm: rem(40),
+  m: rem(50),
+  ml: rem(60),
+  l: rem(85),
+  xl: rem(150)
+);
+
+
+//---------------------------------------------------------------
+// Type – Font Stacks
+//---------------------------------------------------------------
+$font-stacks: (
+  inconsolata: (
+    font-family: ('Inconsolata', monospace),
+    font-weight: normal,
+    font-style: normal
+  )
+);
+
+
+//---------------------------------------------------------------
+// Type – Styles
+//---------------------------------------------------------------
+/*
+  Map that contains all of the type styles used across the site. 
+  New styles should always be added to this map and never as 
+  one off instances elsewhere in the codebase. 
+
+  The name for the top level keys should be comprised of the 
+  font style and desktop/largest size. 
+
+  The 'stack' key correlates to the $font-stacks map above. 
+
+  Sizes Map: The nested 'sizes' map corelates to the sizes across breakpoints. 
+  The default being the base size and others being defined across
+  breakpoints. The names (small, medium, large, etc.) correlate to
+  the $mq-breakpoints map defined in the _base/_variables.scss file. 
+
+  Supports 'text-transform' and 'letter-spacing' as optional keys. 
+  If these aren't include for a particular style they will simply be
+  omitted from the type-styles mixin output. 
+  
+  See typograhpic styleguide for a list of available styles:  
+  /styleguide/typography
+*/
+
+$type-styles: (
+
+  section-heading-code: (
+    stack: inconsolata,
+    line-height: 1.2,
+    letter-spacing: 0,
+    font-smoothing: true,
+    sizes: (
+      default: 16
+    )
+  ),
+
+  base-code: (
+    stack: inconsolata,
+    line-height: 1.3,
+    letter-spacing: 0,
+    font-smoothing: true,
+    sizes: (
+      default: 13
+    )
+  ),
+  subhead: (
+    stack: inconsolata,
+    line-height: 1.3,
+    letter-spacing: 0,
+    font-smoothing: true,
+    sizes: (
+      default: 28
+    )
+  )
+);

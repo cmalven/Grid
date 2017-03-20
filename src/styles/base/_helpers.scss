@@ -1,0 +1,34 @@
+//===============================================================
+// HELPERS
+//===============================================================
+
+/*
+  Global helper classes
+*/
+
+
+//---------------------------------------------------------------
+// Clear + Clearfix
+//---------------------------------------------------------------
+.h-clear-both { clear:both; }
+.h-clearfix { @include clearfix; }
+
+
+//---------------------------------------------------------------
+// Hide
+//---------------------------------------------------------------
+.h-hide-text { @include hide-text; }
+.h-hide-visually { @include hide-visually; }
+
+
+//---------------------------------------------------------------
+// Text
+//---------------------------------------------------------------
+.h-text-centered { text-align:center; }
+.h-text-left { text-align:left; }
+.h-text-right { text-align:right; }
+.h-text-transform-none { text-transform: none; }
+
+.h-text-light-on-dark { @include font-smoothing(); }
+.h-text-smoothing--subpixel { -webkit-font-smoothing: subpixel-antialiased; }
+.h-text-smoothing--antialiased { -webkit-font-smoothing: antialiased; }

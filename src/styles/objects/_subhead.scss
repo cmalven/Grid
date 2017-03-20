@@ -1,0 +1,15 @@
+
+//===============================================================
+// Subhead
+//===============================================================
+
+
+/*
+Subhead
+
+Subhead for each individual section
+*/
+
+.subhead {
+  @include type-style(subhead);
+}

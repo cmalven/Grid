@@ -1,0 +1,30 @@
+
+//===============================================================
+// Layout - Container
+//===============================================================
+
+
+/*
+Layout - Container
+
+The wrapper for the entire site
+*/
+
+.l-container {
+  padding: 5rem;
+
+  > .subhead {
+    @include spacing(l);
+  }
+
+  > .set {
+    @include spacing(l);
+    display: inline-block;
+    width: 25%;
+    min-width: 33rem;
+    max-width: 42rem;
+    padding-right: 2rem;
+    margin-right: -0.4rem;
+    vertical-align: top;
+  }
+}
