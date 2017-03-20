@@ -1,0 +1,32 @@
+
+//===============================================================
+// Message
+//===============================================================
+
+
+/*
+Message
+
+A simple message
+
+.message--warning               - Used for warning text
+
+*/
+
+.message {
+  @include type-style(section-heading-code);
+  font-size: 1.5rem;
+  line-height: 1.4;
+  border: 1px solid color(child-alt);
+  padding: 1.1rem 1.4rem;
+  border-radius: 0.3rem;
+
+  a {
+    border-bottom: 1px solid rgba(color(white), 0.5);
+  }
+
+  a:hover {
+    color: color(child);
+    border-bottom-color: color(child);
+  }
+}

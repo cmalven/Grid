@@ -27,4 +27,8 @@ The wrapper for the entire site
     margin-right: -0.4rem;
     vertical-align: top;
   }
+
+  > .message {
+    @include spacing(l);
+  }
 }
