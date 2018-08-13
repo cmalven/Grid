@@ -11,7 +11,7 @@ Before you run this site locally, make sure you have [NodeJS](http://nodejs.org)
 Then:
 
 * `yarn` 
-* `npm start`
+* `yarn start`
 
 ### Development Server
 
@@ -19,4 +19,4 @@ You can access the site at [http://localhost:3000](http://localhost:3000)
 
 ## Deployment
 
-Deployment details to come…
+`yarn deploy`

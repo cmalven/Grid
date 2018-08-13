@@ -1,0 +1,23 @@
+/*
+Footer
+
+The main site footer.
+*/
+
+.footer {
+  @include type-style(base-code);
+
+  > * + * {
+    margin-top: 1.4rem;
+  }
+
+  p {
+    opacity: 0.6;
+  }
+
+  a {
+    opacity: 1;
+    text-decoration: underline;
+  }
+}
+

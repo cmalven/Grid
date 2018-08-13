@@ -31,4 +31,8 @@ The wrapper for the entire site
   > .message {
     @include spacing(l);
   }
+
+  > .footer {
+    @include spacing(l);
+  }
 }

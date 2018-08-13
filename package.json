@@ -41,9 +41,10 @@
     "gulp-util": "^3.0.7",
     "node-libs-browser": "^1.0.0",
     "postcss-import": "^8.2.0",
-    "require-dir": "^0.3.1",
+    "require-dir": "^1.0.0",
     "run-sequence": "^1.2.2",
     "script-loader": "^0.7.0",
+    "surge": "^0.20.1",
     "webpack": "^1.13.3"
   },
   "dependencies": {
@@ -56,6 +57,8 @@
     "susy": "^2.2.12"
   },
   "scripts": {
-    "start": "gulp"
+    "build": "gulp build",
+    "start": "gulp",
+    "deploy": "NODE_ENV=production yarn build && surge . grid.malven.co"
   }
 }
