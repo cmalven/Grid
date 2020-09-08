@@ -6,12 +6,12 @@ A minimal visual cheatsheet for CSS grid.
 
 ### Front End Dependencies
 
-Before you run this site locally, make sure you have [NodeJS](http://nodejs.org) and [Yarn](https://yarnpkg.com/en/docs/install) installed.
+Before you run this site locally, make sure you have [NodeJS](http://nodejs.org) installed.
 
 Then:
 
-* `yarn` 
-* `yarn start`
+* `npm i` 
+* `npm start`
 
 ### Development Server
 
@@ -19,4 +19,4 @@ You can access the site at [http://localhost:3000](http://localhost:3000)
 
 ## Deployment
 
-`yarn deploy`
+The site is deployed to Netlify automatically any time a change to `master` is detected.

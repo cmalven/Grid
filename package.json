@@ -58,7 +58,6 @@
   },
   "scripts": {
     "build": "gulp build",
-    "start": "gulp",
-    "deploy": "NODE_ENV=production yarn build && surge . grid.malven.co"
+    "start": "gulp"
   }
 }
